@@ -1,0 +1,30 @@
+{
+  "name": "GS-proxy-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "http-proxy": "^1.18.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./server/index.js --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Team-Alpha-HRSF124/GS-proxy-server.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Team-Alpha-HRSF124/GS-proxy-server/issues"
+  },
+  "homepage": "https://github.com/Team-Alpha-HRSF124/GS-proxy-server#readme"
+}
