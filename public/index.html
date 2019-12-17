@@ -8,19 +8,99 @@
         width: 100%;
         margin: 0;
         padding: 0;
+        overflow-x: hidden;
     }
+
+    #NavigationBar {
+      height: 80px;
+      background-image: url('./NavigationBar.png');
+      background-size: contain;
+    }
+
+    #gridContainer {
+      display: grid;
+      grid-template-columns: 100px auto auto 10px; 
+    }
+
+    .leftSide {
+      width: 602px;
+      /* padding changes with width, but not the width of this container */
+      /* this is over all container so it should be giving grid positions */
+      grid-column: 2;
+      grid-row: 1;
+      margin-left: 90px
+    }
+
+    .rightSide {
+      background-position-x: center;
+      /* margin-right: 50px; */
+      margin-top: 20px;
+      grid-column: 3;
+      grid-row: 1;
+    }
+
+    .bottom {
+      grid-column: 1 / 4;
+      grid-row: 2;
+    }
+
+    #description {
+      background-image: url('./InfoPage.png');
+      height: 1700px;
+      background-size: cover;
+      margin-top: 15px;
+      margin-left: 10px;
+    }
+
+    #footer {
+      background-image: url('./footer.png');
+      height: 600px;
+      background-size: contain;
+      margin-top: 15px;
+      margin-left: 10px;
+    }
+
+    #reservations {
+      position: -webkit-sticky; /* Safari */
+      position: sticky;
+      top: 0;
+      width: 300px
+    }
+    #ReservationModule {
+      position: -webkit-sticky; /* Safari */
+      position: sticky;
+      top: 0;
+      width: 300px
+    }
+
+
+
        </style>
   </head>   
   <body>
+      <div id="NavigationBar"></div>
       <div id="gallery"></div>
-      <div id="reservations"></div>
-      <div id="reviews"></div>
-      <div id="related-suggestions"></div>
+    </div>
+    <div id="gridContainer">
+      <div class=leftSide>
+        <div id="description"></div>
+        <div id="reviews"></div>
       </div>
-      <script src="http://localhost:3001/client/app.bundle.js"></script>
-      <script src="http://localhost:3002/bundle.js"></script>
-      <script src="http://localhost:3003/bundle.js"></script>
-      <script src="http://localhost:3004/bundle.js"></script>
+      <div class="rightSide">
+        <!-- <div id="reservations"></div> -->
+        <div id="ReservationModule"></div>
+      </div>
+      <div class="bottom">
+        <div id="related-suggestions"></div>
+        <div id=footer></div>
+      </div>
+      </div>
+      <script src="https://fecservices2.s3-us-west-1.amazonaws.com/app.bundle.js"></script>
+      <script src="https://fec-airbnb-reviews.s3-us-west-1.amazonaws.com/bundle.js"></script>
+      <script src="https://reservation-airbnb.s3.us-east-2.amazonaws.com/bundle.js"></script>
+      <script src="https://airbnbphotogallery.s3-us-west-1.amazonaws.com/bundleAWS.js"></script>
+      <script src="https://lemonloftreservation.s3-us-west-1.amazonaws.com/bundle.js"></script>
   </body>
 </html>
 
+<!-- change these all to EC2 instances so idont have to serve them -->
